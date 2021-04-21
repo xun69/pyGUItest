@@ -41,3 +41,41 @@ btnRun.place(x=10,y=10)
 win.mainloop()
 ```
 基于这个实现，可以制作类似多窗体应用。但是窗体之间的通信和数据交换应该是无法实现的（就目前我浅薄的所知）。
+
+### 扩展思考
+`os.system`其实执行的是CMD的命令，所以像`start`之类的命令应该也可以支持，而利用`start`可以实现网站、文件夹以及文件的打开。
+
+#### 实际测试
+确实可以执行CMD的start命令，用来打开文件】文件夹和网站
+```python
+import tkinter as tk
+import os
+
+win = tk.Tk()
+win.geometry('400x300+600+400')
+win.title('在.py中运行CMD的start命令')
+
+
+def btnRun_click():
+    os.system("start https://www.baidu.com/") # 用系统浏览器打开网址
+
+# 运行按钮
+btnRun = tk.Button(win)
+btnRun["text"] = "打开百度"
+btnRun["width"] = 30
+btnRun["height"] = 3
+btnRun["command"] = btnRun_click
+btnRun.place(x=10,y=10)
+
+
+
+win.mainloop()
+```
+以下是打开文件夹和文件
+```python
+
+os.system("start G:\【Python刻意练习100】\\001\\") # 打开本地文件夹
+os.system("start G:\【Python刻意练习100】\\001\\001.可视化窗体辅助代码生成.mp4") # 打开本地文件夹
+
+```
+其中注意，文件夹必须以反斜杠结尾，并且除磁盘盘符之后紧跟的那个反斜杠不需要转义外，其他路径中的反斜杠都要再加一个反斜杠进行转义。
