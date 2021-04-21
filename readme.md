@@ -11,3 +11,4 @@
 
 如果可以的话，在接下来的时间，我将尝试基于Python + Tkinter 以及VScode + GitHub，不断的开发多种多样的Python代码辅助工具，算是一边学习，一边实践，一边掌握。无果能做出有用的东西，那是最好的。
 
+![图片1](imgs/tkWindow1.jpg)
