@@ -12,3 +12,32 @@
 如果可以的话，在接下来的时间，我将尝试基于Python + Tkinter 以及VScode + GitHub，不断的开发多种多样的Python代码辅助工具，算是一边学习，一边实践，一边掌握。无果能做出有用的东西，那是最好的。
 
 ![图片1](imgs/tkWindow1.jpg)
+
+
+## runPyinPy.py
+这是基于`os.system`来实现的在一个脚本文件运行时执行另一个脚本文件。
+```python
+import tkinter as tk
+import os
+
+win = tk.Tk()
+win.geometry('400x300+600+400')
+win.title('在.py中运行其他.py脚本文件')
+
+
+def btnRun_click():
+    os.system("python tkWindow.py") # 运行另一个python脚本文件
+
+# 运行按钮
+btnRun = tk.Button(win)
+btnRun["text"] = "运行tkWindow.py"
+btnRun["width"] = 30
+btnRun["height"] = 3
+btnRun["command"] = btnRun_click
+btnRun.place(x=10,y=10)
+
+
+
+win.mainloop()
+```
+基于这个实现，可以制作类似多窗体应用。但是窗体之间的通信和数据交换应该是无法实现的（就目前我浅薄的所知）。
