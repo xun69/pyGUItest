@@ -3,11 +3,11 @@ import os
 
 win = tk.Tk()
 win.geometry('400x300+600+400')
-win.title('在.py中运行CMD的start命令')
+win.title('在.py中运行CMD的start命令打开网站')
 
 
 def btnRun_click():
-    os.system("start G:\【Python刻意练习100】\\001\\") # 打开本地文件夹
+    os.system("start https://www.baidu.com/") # 打开网站
 
 # 运行按钮
 btnRun = tk.Button(win)
